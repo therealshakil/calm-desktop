@@ -26,6 +26,9 @@ APPS = [
     ("terminal", "file:///usr/share/applications/org.gnome.Terminal.desktop"),
     ("whatsapp", "file://%s/.local/share/applications/brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" % HOME),
     ("separator", "docklet://separator"),
+    # A macOS-style stack: the icon previews the newest files; a click lists them.
+    ("downloads", "file://%s/Downloads" % HOME,
+     "DirectoryStyle=1\nSortBy=date-modified\nLargeIcons=true\nShowHiddenFiles=false\n"),
     ("trash", "docklet://trash"),
 ]
 
@@ -38,14 +41,15 @@ for name in ("calm-ink", "calm-paper"):
 
 # 2. The dock's items.
 LAUNCHERS.mkdir(parents=True, exist_ok=True)
-for name, uri in APPS:
-    (LAUNCHERS / (name + ".dockitem")).write_text("[PlankDockItemPreferences]\nLauncher=%s\n" % uri)
+for name, uri, *extra in APPS:
+    (LAUNCHERS / (name + ".dockitem")).write_text(
+        "[PlankDockItemPreferences]\nLauncher=%s\n%s" % (uri, extra[0] if extra else ""))
 
 # 3. The dock: centred at the bottom, floating a little, steps aside only when a window needs the space.
 dock = Gio.Settings.new_with_path("net.launchpad.plank.dock.settings", "/net/launchpad/plank/docks/dock1/")
 ink = Gio.Settings.new("org.cinnamon.desktop.interface").get_string("gtk-theme") != "calm-paper"
 dock.set_string("theme", "calm-ink" if ink else "calm-paper")
-dock.set_strv("dock-items", [name + ".dockitem" for name, _ in APPS])
+dock.set_strv("dock-items", [item[0] + ".dockitem" for item in APPS])
 dock.set_string("hide-mode", "window-dodge")
 dock.set_int("icon-size", 44)
 dock.set_int("gap-size", 8)

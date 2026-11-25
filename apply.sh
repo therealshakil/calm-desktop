@@ -40,6 +40,7 @@ python3 -I /home/shakil/Projects/calm-desktop/quiet-applets.py
 # 5b. macOS-like layout: slim top bar and a centred Plank Reloaded dock.
 # Needs Plank Reloaded installed once: sudo sh /home/shakil/Projects/calm-desktop/install-plank.sh
 python3 -I /home/shakil/Projects/calm-desktop/calm-dock.py
+python3 -I /home/shakil/Projects/calm-desktop/calm-icons.py
 
 # 6. Files: Nemo in list view, with less chrome.
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'
