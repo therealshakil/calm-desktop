@@ -15,7 +15,13 @@ from pathlib import Path
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
-from PIL import Image
+from PIL import Image, ImageEnhance
+
+# How much of each icon's own colour comes through, softened, over the warm monochrome.
+# 0 = pure ink and paper; 0.4 = muted colour (chosen 2026-11-26); 1 = softened original.
+MUTE = 0.40
+# Icons drawn from another icon's artwork: Ghostty wears the plain terminal icon.
+ALIASES = {"com.mitchellh.ghostty": "utilities-terminal"}
 
 HOME = Path.home()
 OUT = HOME / ".local/share/icons"
@@ -54,6 +60,9 @@ def mono(pixbuf):
                          "raw", mode, pixbuf.get_rowstride())
     lum = im.convert("L")
     out = Image.merge("RGB", [lum.point(LUT[i]) for i in range(3)])
+    if MUTE:
+        soft = ImageEnhance.Color(im.convert("RGB")).enhance(0.6)
+        out = Image.blend(out, soft, MUTE)
     if mode == "RGBA":
         out.putalpha(im.getchannel("A"))
     return out
@@ -87,7 +96,7 @@ count = 0
 for ctx, icons in names().items():
     for name in sorted(icons):
         for size in SIZES:
-            info = theme.lookup_icon(name, size, Gtk.IconLookupFlags.FORCE_SIZE)
+            info = theme.lookup_icon(ALIASES.get(name, name), size, Gtk.IconLookupFlags.FORCE_SIZE)
             if info is None:
                 continue
             try:
