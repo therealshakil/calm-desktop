@@ -23,7 +23,6 @@ APPS = [
     ("firefox", "file:///usr/share/applications/firefox.desktop"),
     ("calibre", "file:///usr/share/applications/calibre-gui.desktop"),
     ("hexchat", "file:///var/lib/flatpak/exports/share/applications/io.github.Hexchat.desktop"),
-    ("terminal", "file:///usr/share/applications/org.gnome.Terminal.desktop"),
     ("whatsapp", "file://%s/.local/share/applications/brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" % HOME),
     ("separator", "docklet://separator"),
     # A macOS-style stack: the icon previews the newest files; a click lists them.

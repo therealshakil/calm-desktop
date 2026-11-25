@@ -13,9 +13,9 @@ from gi.repository import Gio, GLib
 
 PICS = "file:///home/shakil/Pictures/calm/"
 MODES = {
-    "dark": {"theme": "calm-ink", "icons": "Yaru-sage-dark", "scheme": "prefer-dark",
+    "dark": {"theme": "calm-ink", "icons": "calm-mono-dark", "scheme": "prefer-dark",
              "wallpaper": PICS + "kijani-night.jpeg"},
-    "light": {"theme": "calm-paper", "icons": "Yaru-sage", "scheme": "prefer-light",
+    "light": {"theme": "calm-paper", "icons": "calm-mono-light", "scheme": "prefer-light",
               "wallpaper": PICS + "kijani-3x2.png"},
 }
 THEME_TO_MODE = {m["theme"]: name for name, m in MODES.items()}

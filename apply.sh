@@ -10,8 +10,10 @@ python3 -I /home/shakil/Projects/calm-desktop/build-themes.py
 gsettings set org.cinnamon.desktop.interface gtk-theme 'calm-ink'
 gsettings set org.gnome.desktop.interface gtk-theme 'calm-ink'
 gsettings set org.cinnamon.theme name 'calm-ink'
-gsettings set org.cinnamon.desktop.interface icon-theme 'Yaru-sage-dark'
-gsettings set org.gnome.desktop.interface icon-theme 'Yaru-sage-dark'
+python3 -I /home/shakil/Projects/calm-desktop/calm-icons.py
+python3 -I /home/shakil/Projects/calm-desktop/build-icons.py
+gsettings set org.cinnamon.desktop.interface icon-theme 'calm-mono-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'calm-mono-dark'
 gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/shakil/Pictures/calm/kijani-3x2.png'
 gsettings set org.cinnamon.desktop.background picture-options 'zoom'
 
@@ -40,7 +42,6 @@ python3 -I /home/shakil/Projects/calm-desktop/quiet-applets.py
 # 5b. macOS-like layout: slim top bar and a centred Plank Reloaded dock.
 # Needs Plank Reloaded installed once: sudo sh /home/shakil/Projects/calm-desktop/install-plank.sh
 python3 -I /home/shakil/Projects/calm-desktop/calm-dock.py
-python3 -I /home/shakil/Projects/calm-desktop/calm-icons.py
 
 # 6. Files: Nemo in list view, with less chrome.
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'

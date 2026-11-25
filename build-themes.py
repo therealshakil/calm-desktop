@@ -130,7 +130,7 @@ def build(src, name, ramp, clay):
         "Comment=calm: ink on paper, built from Mint-Y\nEncoding=UTF-8\n\n"
         "[X-GNOME-Metatheme]\nGtkTheme=%s\nMetacityTheme=Mint-Y\nIconTheme=%s\n"
         "CursorTheme=Bibata-Modern-Classic\nButtonLayout=:minimize,maximize,close\n"
-        % (name, name, "Yaru-sage-dark" if name == "calm-ink" else "Yaru-sage"))
+        % (name, name, "calm-mono-dark" if name == "calm-ink" else "calm-mono-light"))
     print("built", dst)
 
 

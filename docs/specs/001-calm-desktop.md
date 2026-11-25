@@ -20,7 +20,7 @@ Mint 23 keeps Cinnamon on X11 as its default, so this rides the next upgrade.
 | --- | --- |
 | Desktop and WM | Cinnamon on X11, effects and animations off |
 | Theme | calm-ink (default) and calm-paper, rebuilt from Mint-Y |
-| Icons | Yaru sage (dark): muted folders with a sage tab that echoes Kijani (chosen 2026-11-25); loud app icons overridden in calm-icons.py (WhatsApp in sage and paper) |
+| Icons | calm-mono (2026-11-26): every app, folder, file-type and device icon redrawn in ink-to-paper tones by build-icons.py, over Yaru sage; symbolic icons already single-colour |
 | Downloads | a macOS-style stack on the dock, newest first |
 | Type | Atkinson Hyperlegible, interface and titles |
 | Top bar | slim, macOS-like: menu left; tray, status and "Wed 25 Nov  23:45" right; no window list |
