@@ -25,7 +25,8 @@ Mint 23 keeps Cinnamon on X11 as its default, so this rides the next upgrade.
 | Notifications | small calm popups: 22em wide, thin border, no accent bar, short shadow |
 | Desktop | Kijani wallpaper, no icons |
 | Files | Nemo, list view, less chrome |
-| Browser | Firefox, AI blocked, calm-firefox userChrome |
+| Browser | Firefox, AI blocked, compact two-row chrome (Brave-like), tabs restored on start |
+| Start page | the search box alone, on calm ink or paper (calm-firefox userContent) |
 | Terminal | Ghostty, already calm |
 
 ## How it's built

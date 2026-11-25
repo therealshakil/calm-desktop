@@ -19,3 +19,30 @@ user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+
+// A quiet new tab: no weather, widgets, promo card or big logo (Firefox 161 names).
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
+user_pref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+user_pref("browser.newtabpage.activity-stream.widgets.crossword.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.system.crossword.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.pictureOfTheDay.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.system.pictureOfTheDay.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.lists.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.focusTimer.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.clocks.enabled", false);
+
+// Pick up where you left off: reopen the previous tabs on every start.
+user_pref("browser.startup.page", 3);
+
+// The start page is just the search box: no shortcuts either.
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+
+// No VPN button in the toolbar.
+user_pref("browser.ipProtection.enabled", false);
+
+// Compact, Brave-like chrome: tight density, tabs in the title bar, no bookmarks row on new tabs.
+user_pref("browser.compactmode.show", true);
+user_pref("browser.uidensity", 1);
+user_pref("browser.tabs.inTitlebar", 1);
+user_pref("browser.toolbars.bookmarks.visibility", "never");

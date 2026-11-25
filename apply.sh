@@ -51,3 +51,4 @@ xdg-settings set default-web-browser firefox.desktop
 mkdir -p /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome
 ln -sf /home/shakil/Projects/calm-desktop/firefox/user.js /home/shakil/.mozilla/firefox/snmwf616.default-release/user.js
 ln -sf /home/shakil/Projects/calm-firefox/chrome/userChrome.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userChrome.css
+ln -sf /home/shakil/Projects/calm-firefox/chrome/userContent.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userContent.css
