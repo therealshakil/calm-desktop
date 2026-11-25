@@ -48,7 +48,11 @@ gsettings set org.nemo.preferences show-icon-view-icon-toolbar false
 gsettings set org.nemo.preferences show-list-view-icon-toolbar false
 gsettings set org.nemo.preferences show-edit-icon-toolbar false
 
-# 7. Browser: Firefox, linked to calm prefs and calm-firefox's userChrome (restart Firefox after).
+# 7. Light and dark: calm-mode follows the theme (wallpaper, icons, panel, apps) from login onward.
+mkdir -p /home/shakil/.config/autostart
+ln -sf /home/shakil/Projects/calm-desktop/autostart/calm-mode.desktop /home/shakil/.config/autostart/calm-mode.desktop
+
+# 8. Browser: Firefox, linked to calm prefs and calm-firefox's userChrome (restart Firefox after).
 xdg-settings set default-web-browser firefox.desktop
 mkdir -p /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome
 ln -sf /home/shakil/Projects/calm-desktop/firefox/user.js /home/shakil/.mozilla/firefox/snmwf616.default-release/user.js

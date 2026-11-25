@@ -24,7 +24,8 @@ Mint 23 keeps Cinnamon on X11 as its default, so this rides the next upgrade.
 | Type | Atkinson Hyperlegible, interface and titles |
 | Panel | one panel, no badges |
 | Notifications | small calm popups: 22em wide, thin border, no accent bar, short shadow |
-| Desktop | Kijani wallpaper, no icons |
+| Desktop | Kijani by day, Kijani at night; no icons |
+| Light and dark | pick calm-paper or calm-ink in Themes; calm-mode.py flips wallpaper, icons, panel and apps to match |
 | Files | Nemo, list view, less chrome |
 | Browser | Firefox, AI blocked, compact two-row chrome (Brave-like), tabs restored on start |
 | Start page | the search box alone, on calm ink or paper (calm-firefox userContent) |

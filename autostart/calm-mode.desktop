@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Calm mode
+Comment=Light and dark follow the theme, wallpaper and all
+Exec=python3 -I /home/shakil/Projects/calm-desktop/calm-mode.py watch
+X-GNOME-Autostart-enabled=true
+NoDisplay=true
