@@ -14,12 +14,19 @@ Two themes, calm-ink and calm-paper, rebuilt from Mint's own Mint-Y.
 Atkinson Hyperlegible across the interface.
 No animations, no badges, small quiet notification popups, nothing on the desktop but the Kijani wallpaper.
 Nemo with less chrome, and Firefox with AI blocked and calm-firefox's declutter.
+A macOS-like layout: a slim top bar and a centred Plank Reloaded dock, both in ink or paper.
 
 The decision behind it: [`docs/specs/001-calm-desktop.md`](./docs/specs/001-calm-desktop.md).
 
 ## Use
 
-Run it once, and again after a Mint upgrade or a reinstall:
+The dock needs Plank Reloaded, installed once from its official repository:
+
+```sh
+sudo sh /home/shakil/Projects/calm-desktop/install-plank.sh
+```
+
+Then run this once, and again after a Mint upgrade or a reinstall:
 
 ```sh
 sh /home/shakil/Projects/calm-desktop/apply.sh

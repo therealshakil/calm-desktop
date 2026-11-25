@@ -1,0 +1,46 @@
+# calm-desktop: the dock in calm-paper. Built from Plank Reloaded's Minimal-Light; colours from calm tokens.
+# No bounce, no glow, no count badges, short gentle fades.
+
+[PlankTheme]
+TopRoundness=16
+BottomRoundness=16
+LineWidth=1
+# --calm-line, --calm-card at ~88%
+OuterStrokeColor=228;;220;;203;;255
+FillStartColor=252;;250;;244;;225
+FillEndColor=252;;250;;244;;225
+InnerStrokeColor=0;;0;;0;;0
+
+[PlankDockTheme]
+HorizPadding=5
+TopPadding=4
+BottomPadding=4
+ItemPadding=5
+SeparatorPadding=-1
+# a small near-black dot under running apps
+IndicatorColor=38;;35;;30;;200
+IndicatorSize=1
+IndicatorStyle=2
+IconShadowSize=0
+UrgentBounceHeight=0
+LaunchBounceHeight=0
+FadeOpacity=0
+ClickTime=0
+UrgentBounceTime=0
+LaunchBounceTime=0
+ActiveTime=0
+SlideTime=200
+FadeTime=200
+HideTime=200
+GlowSize=0
+GlowTime=0
+GlowPulseTime=0
+UrgentHueShift=0
+ItemMoveTime=0
+CascadeHide=true
+# badges drawn invisible: no counts
+BadgeColor=0;;0;;0;;0
+BadgeStyle=1
+BadgeTextColor=0;;0;;0;;0
+ActiveItemStyle=3
+ActiveItemColor=0;;0;;0;;0

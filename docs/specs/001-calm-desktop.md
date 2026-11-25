@@ -22,7 +22,8 @@ Mint 23 keeps Cinnamon on X11 as its default, so this rides the next upgrade.
 | Theme | calm-ink (default) and calm-paper, rebuilt from Mint-Y |
 | Icons | Yaru sage (dark): muted folders with a sage tab that echoes Kijani (chosen 2026-11-25) |
 | Type | Atkinson Hyperlegible, interface and titles |
-| Panel | one panel, no badges |
+| Top bar | slim, macOS-like: menu left; tray, status and "Wed 25 Nov  23:45" right; no window list |
+| Dock | Plank Reloaded (official apt repo), centred and floating, calm-ink / calm-paper; no zoom, bounce, glow or badges; steps aside for windows (chosen 2026-11-25) |
 | Notifications | small calm popups: 22em wide, thin border, no accent bar, short shadow |
 | Desktop | Kijani by day, Kijani at night; no icons |
 | Light and dark | pick calm-paper or calm-ink in Themes; calm-mode.py flips wallpaper, icons, panel and apps to match |
@@ -53,6 +54,6 @@ After a Mint upgrade, `apply.sh` rebuilds against the new Mint-Y and replays eve
 ## Constitution Check
 
 1. **Serves:** VI (calm over alarm: no badges, no red, small quiet popups), IX (nothing new to maintain), I (a desktop to glance past).
-2. **Violates:** none — no new system packages; one user font from Google Fonts' own repo.
+2. **Violates:** none. Two additions, each chosen by Shakil: one user font from Google Fonts' own repo, and Plank Reloaded from its official, actively maintained apt repo (X11 only; Mint stays X11 by default).
 3. **Subtracts:** five applets, desktop icons, every animation, a third of each popup, Brave as default.
 4. **Calm:** every step undoes with one dconf load; Timeshift snapshots nightly; motion off everywhere.

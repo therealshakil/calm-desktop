@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Calm dock
+Comment=Plank Reloaded, in calm ink or paper
+Exec=plank
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

@@ -25,6 +25,9 @@ gnome = Gio.Settings.new("org.gnome.desktop.interface")
 shell = Gio.Settings.new("org.cinnamon.theme")
 portal = Gio.Settings.new("org.x.apps.portal")
 background = Gio.Settings.new("org.cinnamon.desktop.background")
+_source = Gio.SettingsSchemaSource.get_default()
+dock = (Gio.Settings.new_with_path("net.launchpad.plank.dock.settings", "/net/launchpad/plank/docks/dock1/")
+        if _source.lookup("net.launchpad.plank.dock.settings", True) else None)
 
 
 def put(settings, key, value):
@@ -41,6 +44,8 @@ def apply(mode):
     put(portal, "color-scheme", m["scheme"])
     put(background, "picture-uri", m["wallpaper"])
     put(background, "picture-options", "zoom")
+    if dock:
+        put(dock, "theme", m["theme"])  # the dock themes share the names calm-ink / calm-paper
 
 
 def follow(settings, key):

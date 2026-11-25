@@ -35,8 +35,11 @@ gsettings set org.gnome.desktop.interface enable-animations false
 # 5. Quiet: small calm notification popups (styled in build-themes.py); nothing on the desktop; a trimmed panel.
 gsettings set org.cinnamon.desktop.notifications display-notifications true
 gsettings set org.nemo.desktop show-desktop-icons false
-gsettings set org.cinnamon enabled-applets "['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:2:grouped-window-list@cinnamon.org:2', 'panel1:right:0:systray@cinnamon.org:3', 'panel1:right:1:xapp-status@cinnamon.org:4', 'panel1:right:2:notifications@cinnamon.org:5', 'panel1:right:4:removable-drives@cinnamon.org:7', 'panel1:right:7:network@cinnamon.org:10', 'panel1:right:8:sound@cinnamon.org:11', 'panel1:right:9:power@cinnamon.org:12', 'panel1:right:10:calendar@cinnamon.org:13']"
 python3 -I /home/shakil/Projects/calm-desktop/quiet-applets.py
+
+# 5b. macOS-like layout: slim top bar and a centred Plank Reloaded dock.
+# Needs Plank Reloaded installed once: sudo sh /home/shakil/Projects/calm-desktop/install-plank.sh
+python3 -I /home/shakil/Projects/calm-desktop/calm-dock.py
 
 # 6. Files: Nemo in list view, with less chrome.
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'
