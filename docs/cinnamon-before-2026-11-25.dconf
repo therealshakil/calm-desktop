@@ -1,0 +1,115 @@
+[/]
+alttab-switcher-delay=100
+desklet-snap-interval=25
+desktop-effects-close='none'
+desktop-effects-map='none'
+desktop-effects-minimize='none'
+desktop-effects-workspace=true
+enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:1:separator@cinnamon.org:1', 'panel1:left:2:grouped-window-list@cinnamon.org:2', 'panel1:right:0:systray@cinnamon.org:3', 'panel1:right:1:xapp-status@cinnamon.org:4', 'panel1:right:2:notifications@cinnamon.org:5', 'panel1:right:3:printers@cinnamon.org:6', 'panel1:right:4:removable-drives@cinnamon.org:7', 'panel1:right:5:keyboard@cinnamon.org:8', 'panel1:right:6:favorites@cinnamon.org:9', 'panel1:right:7:network@cinnamon.org:10', 'panel1:right:8:sound@cinnamon.org:11', 'panel1:right:9:power@cinnamon.org:12', 'panel1:right:10:calendar@cinnamon.org:13', 'panel1:right:11:cornerbar@cinnamon.org:14']
+enabled-desklets=['clock@schorschii:0:225:50', 'system-monitor-graph@rcassani:2:1575:150', 'system-monitor-graph@rcassani:3:1575:275', 'system-monitor-graph@rcassani:4:1575:25']
+hotcorner-layout=['expo:true:0', 'scale:true:0', 'scale:false:0', 'desktop:false:0']
+next-applet-id=15
+next-desklet-id=5
+panel-edit-mode=false
+panel-zone-symbolic-icon-sizes='[{"panelId": 1, "left": 28, "center": 28, "right": 16}]'
+panels-autohide=['1:intel']
+panels-enabled=['1:0:bottom']
+panels-height=['1:44']
+window-effect-speed=1
+workspace-expo-view-as-grid=true
+
+[desktop/background]
+picture-options='zoom'
+picture-uri='file:///home/shakil/Pictures/calm/kijani-3x2.png'
+
+[desktop/background/slideshow]
+delay=15
+image-source='xml:///usr/share/cinnamon-background-properties/linuxmint-wallpapers.xml'
+
+[desktop/input-sources]
+sources=[('xkb', 'gb')]
+
+[desktop/interface]
+clock-show-date=true
+clock-show-seconds=true
+cursor-blink-time=1200
+cursor-size=24
+cursor-theme='Bibata-Modern-Classic'
+gtk-theme='Mint-Y-Dark-Orange'
+icon-theme='Mint-Y-Yaru'
+text-scaling-factor=1.2000000000000002
+
+[desktop/media-handling]
+autorun-x-content-ignore=['x-content/ebook-reader']
+autorun-x-content-open-folder=@as []
+autorun-x-content-start-app=['x-content/unix-software', 'x-content/ebook-reader']
+
+[desktop/peripherals/keyboard]
+delay=uint32 500
+repeat-interval=uint32 30
+
+[desktop/peripherals/mouse]
+double-click=400
+drag-threshold=8
+natural-scroll=true
+speed=0.0
+
+[desktop/peripherals/touchpad]
+speed=0.0
+
+[desktop/screensaver]
+layout-group=0
+lock-enabled=true
+
+[desktop/sound]
+event-sounds=false
+
+[desktop/wm/preferences]
+min-window-opacity=30
+num-workspaces=4
+workspace-names=@as []
+
+[gestures]
+enabled=true
+pinch-percent-threshold=uint32 40
+swipe-down-2='PUSH_TILE_DOWN::end'
+swipe-down-3='TOGGLE_OVERVIEW::end'
+swipe-down-4='VOLUME_DOWN::end'
+swipe-left-2='PUSH_TILE_LEFT::end'
+swipe-left-3='WORKSPACE_NEXT::end'
+swipe-left-4='WINDOW_WORKSPACE_PREVIOUS::end'
+swipe-percent-threshold=uint32 60
+swipe-right-2='PUSH_TILE_RIGHT::end'
+swipe-right-3='WORKSPACE_PREVIOUS::end'
+swipe-right-4='WINDOW_WORKSPACE_NEXT::end'
+swipe-up-2='PUSH_TILE_UP::end'
+swipe-up-3='TOGGLE_EXPO::end'
+swipe-up-4='VOLUME_UP::end'
+tap-3='MEDIA_PLAY_PAUSE::end'
+
+[muffin]
+draggable-border-width=10
+tile-maximize=true
+workspace-cycle=false
+
+[settings-daemon/peripherals/keyboard]
+numlock-state='off'
+
+[settings-daemon/peripherals/touchscreen]
+orientation-lock=true
+
+[settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-last-coordinates=(-1.2833330000000001, 36.816667000000002)
+night-light-temperature=uint32 3600
+
+[settings-daemon/plugins/power]
+lid-close-ac-action='suspend'
+lid-close-battery-action='suspend'
+sleep-display-ac=1800
+sleep-display-battery=1800
+sleep-inactive-ac-timeout=0
+sleep-inactive-battery-timeout=0
+
+[theme]
+name='Mint-Y-Dark-Orange'
