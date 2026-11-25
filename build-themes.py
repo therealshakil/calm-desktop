@@ -28,6 +28,29 @@ CLAY = {"paper": "B5612F", "ink": "EDB489"}
 
 THEMES = [("Mint-Y-Grey", "calm-paper", PAPER), ("Mint-Y-Dark-Grey", "calm-ink", INK)]
 
+# A smaller, quieter notification popup, laid over Mint's. Colours: card, line, ink.
+NOTE_COLOURS = {"paper": ("#FCFAF4", "#E4DCCB", "#26231E"), "ink": ("#221E19", "#3A342A", "#ECE6D8")}
+NOTE_CSS = """
+/* calm-desktop: a quiet notification. Small, thin-bordered, no accent bar. */
+#notification {
+  width: 22em;
+  padding: 10px 14px;
+  spacing-rows: 4px;
+  spacing-columns: 10px;
+  margin-from-right-edge-of-screen: 16px;
+  border: 1px solid %(line)s;
+  border-radius: 8px;
+  background-color: %(card)s;
+  color: %(ink)s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }
+#notification.multi-line-notification { padding-bottom: 10px; }
+#notification-scrollview { max-height: 5em; }
+#notification-actions { spacing: 6px; }
+.notification-with-image { min-height: 0; }
+.notification-button, .notification-icon-button { padding: 3px 8px; }
+.notification-icon-button > StIcon { icon-size: 16px; }
+"""
+
 
 def rgb(h):
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
@@ -99,6 +122,9 @@ def build(src, name, ramp, clay):
             f.write_text(recolour_text(f.read_text(), ramp, clay))
         elif f.is_file() and f.suffix == ".png":
             recolour_png(f, ramp, clay)
+    card, line, ink = NOTE_COLOURS[name.split("-")[1]]
+    shell = dst / "cinnamon" / "cinnamon.css"
+    shell.write_text(shell.read_text() + NOTE_CSS % {"card": card, "line": line, "ink": ink})
     (dst / "index.theme").write_text(
         "[Desktop Entry]\nType=X-GNOME-Metatheme\nName=%s\n"
         "Comment=calm: ink on paper, built from Mint-Y\nEncoding=UTF-8\n\n"

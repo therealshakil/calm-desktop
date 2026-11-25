@@ -21,7 +21,8 @@ Mint 23 keeps Cinnamon on X11 as its default, so this rides the next upgrade.
 | Desktop and WM | Cinnamon on X11, effects and animations off |
 | Theme | calm-ink (default) and calm-paper, rebuilt from Mint-Y |
 | Type | Atkinson Hyperlegible, interface and titles |
-| Panel | one panel, no badges, notifications held quietly |
+| Panel | one panel, no badges |
+| Notifications | small calm popups: 22em wide, thin border, no accent bar, short shadow |
 | Desktop | Kijani wallpaper, no icons |
 | Files | Nemo, list view, less chrome |
 | Browser | Firefox, AI blocked, calm-firefox userChrome |
@@ -48,7 +49,7 @@ After a Mint upgrade, `apply.sh` rebuilds against the new Mint-Y and replays eve
 
 ## Constitution Check
 
-1. **Serves:** VI (calm over alarm: no badges, no red, no popups), IX (nothing new to maintain), I (a desktop to glance past).
+1. **Serves:** VI (calm over alarm: no badges, no red, small quiet popups), IX (nothing new to maintain), I (a desktop to glance past).
 2. **Violates:** none — no new system packages; one user font from Google Fonts' own repo.
-3. **Subtracts:** five applets, desktop icons, every animation, notification popups, Brave as default.
+3. **Subtracts:** five applets, desktop icons, every animation, a third of each popup, Brave as default.
 4. **Calm:** every step undoes with one dconf load; Timeshift snapshots nightly; motion off everywhere.

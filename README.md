@@ -12,7 +12,7 @@ Part of the calm suite — it inherits calm's Constitution, identity, and voice 
 
 Two themes, calm-ink and calm-paper, rebuilt from Mint's own Mint-Y.
 Atkinson Hyperlegible across the interface.
-No animations, no badges, no notification popups, nothing on the desktop but the Kijani wallpaper.
+No animations, no badges, small quiet notification popups, nothing on the desktop but the Kijani wallpaper.
 Nemo with less chrome, and Firefox with AI blocked and calm-firefox's declutter.
 
 The decision behind it: [`docs/specs/001-calm-desktop.md`](./docs/specs/001-calm-desktop.md).
