@@ -128,8 +128,9 @@ def build(src, name, ramp, clay):
     (dst / "index.theme").write_text(
         "[Desktop Entry]\nType=X-GNOME-Metatheme\nName=%s\n"
         "Comment=calm: ink on paper, built from Mint-Y\nEncoding=UTF-8\n\n"
-        "[X-GNOME-Metatheme]\nGtkTheme=%s\nMetacityTheme=Mint-Y\nIconTheme=Mint-Y-Grey\n"
-        "CursorTheme=Bibata-Modern-Classic\nButtonLayout=:minimize,maximize,close\n" % (name, name))
+        "[X-GNOME-Metatheme]\nGtkTheme=%s\nMetacityTheme=Mint-Y\nIconTheme=%s\n"
+        "CursorTheme=Bibata-Modern-Classic\nButtonLayout=:minimize,maximize,close\n"
+        % (name, name, "Yaru-sage-dark" if name == "calm-ink" else "Yaru-sage"))
     print("built", dst)
 
 

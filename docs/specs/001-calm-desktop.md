@@ -20,6 +20,7 @@ Mint 23 keeps Cinnamon on X11 as its default, so this rides the next upgrade.
 | --- | --- |
 | Desktop and WM | Cinnamon on X11, effects and animations off |
 | Theme | calm-ink (default) and calm-paper, rebuilt from Mint-Y |
+| Icons | Yaru sage (dark): muted folders with a sage tab that echoes Kijani (chosen 2026-11-25) |
 | Type | Atkinson Hyperlegible, interface and titles |
 | Panel | one panel, no badges |
 | Notifications | small calm popups: 22em wide, thin border, no accent bar, short shadow |

@@ -10,6 +10,8 @@ python3 -I /home/shakil/Projects/calm-desktop/build-themes.py
 gsettings set org.cinnamon.desktop.interface gtk-theme 'calm-ink'
 gsettings set org.gnome.desktop.interface gtk-theme 'calm-ink'
 gsettings set org.cinnamon.theme name 'calm-ink'
+gsettings set org.cinnamon.desktop.interface icon-theme 'Yaru-sage-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Yaru-sage-dark'
 gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/shakil/Pictures/calm/kijani-3x2.png'
 gsettings set org.cinnamon.desktop.background picture-options 'zoom'
 
