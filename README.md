@@ -18,6 +18,14 @@ A macOS-like layout: a slim top bar and a centred Plank Reloaded dock, both in i
 
 The decision behind it: [`docs/specs/001-calm-desktop.md`](./docs/specs/001-calm-desktop.md).
 
+## Depends on
+
+- **[calm-firefox](https://github.com/therealshakil/calm-firefox)** holds everything about Firefox:
+  prefs (`user.js`) and stylesheets (`chrome/`).
+  It's its own repo because it serves any Firefox, on any OS.
+  `apply.sh` clones it into `~/Projects/calm-firefox` if missing, pulls it if present, and links it into the profile.
+  A Firefox change goes there; the wiring stays here.
+
 ## Use
 
 The dock needs Plank Reloaded, installed once from its official repository:

@@ -58,9 +58,15 @@ mkdir -p /home/shakil/.config/autostart
 ln -sf /home/shakil/Projects/calm-desktop/autostart/calm-mode.desktop /home/shakil/.config/autostart/calm-mode.desktop
 python3 -I /home/shakil/Projects/calm-desktop/calm-applet.py
 
-# 8. Browser: Firefox, linked to calm prefs and calm-firefox's userChrome (restart Firefox after).
+# 8. Browser: Firefox, linked to calm-firefox's prefs and stylesheets (restart Firefox after).
+# calm-firefox is its own repo (it serves any Firefox); fetch it if it isn't here, else bring it up to date.
+if [ -d /home/shakil/Projects/calm-firefox/.git ]; then
+  git -C /home/shakil/Projects/calm-firefox pull --ff-only
+else
+  git clone https://github.com/therealshakil/calm-firefox.git /home/shakil/Projects/calm-firefox
+fi
 xdg-settings set default-web-browser firefox.desktop
 mkdir -p /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome
-ln -sf /home/shakil/Projects/calm-desktop/firefox/user.js /home/shakil/.mozilla/firefox/snmwf616.default-release/user.js
+ln -sf /home/shakil/Projects/calm-firefox/user.js /home/shakil/.mozilla/firefox/snmwf616.default-release/user.js
 ln -sf /home/shakil/Projects/calm-firefox/chrome/userChrome.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userChrome.css
 ln -sf /home/shakil/Projects/calm-firefox/chrome/userContent.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userContent.css
