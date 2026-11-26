@@ -56,6 +56,7 @@ gsettings set org.nemo.preferences show-edit-icon-toolbar false
 # 7. Light and dark: calm-mode follows the theme (wallpaper, icons, panel, apps) from login onward.
 mkdir -p /home/shakil/.config/autostart
 ln -sf /home/shakil/Projects/calm-desktop/autostart/calm-mode.desktop /home/shakil/.config/autostart/calm-mode.desktop
+python3 -I /home/shakil/Projects/calm-desktop/calm-applet.py
 
 # 8. Browser: Firefox, linked to calm prefs and calm-firefox's userChrome (restart Firefox after).
 xdg-settings set default-web-browser firefox.desktop

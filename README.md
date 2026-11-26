@@ -34,12 +34,15 @@ sh /home/shakil/Projects/calm-desktop/apply.sh
 
 Then restart Firefox so it reads its calm prefs.
 
-For a bright day, pick calm-paper in Themes; calm-ink is the default.
-Everything follows: the wallpaper (Kijani by day or at night), icons, panel, and apps.
+Light, mixed, or dark: click the sun-and-moon switch on the top bar.
+Mixed is paper apps under an ink top bar and dock; calm-ink is the default.
+The apps half carries the wallpaper (Kijani by day or at night), icons, and apps' colour scheme;
+the desktop half carries the top bar and the dock.
+The Themes window works too, and each half follows its own setting.
 Or switch from a terminal:
 
 ```sh
-python3 -I /home/shakil/Projects/calm-desktop/calm-mode.py toggle
+python3 -I /home/shakil/Projects/calm-desktop/calm-mode.py mixed
 ```
 
 ## Undo

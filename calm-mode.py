@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
-"""calm-desktop: one switch for light and dark.
+"""calm-desktop: one switch for light, dark, and mixed.
 
-Pick calm-paper or calm-ink in Themes and everything follows: panel, icons, apps' colour scheme,
-and the wallpaper (Kijani by day, Kijani at night).
+Two halves move on their own, so they can be mixed:
+  apps     the Applications theme; icons, apps' colour scheme and the wallpaper follow it.
+  desktop  the Desktop theme (top bar); the dock follows it.
+Light is paper/paper, dark is ink/ink, mixed is paper apps under an ink bar and dock.
+The top-bar switcher (applet/) and the Themes window both work; this keeps the rest in step.
 
-    calm-mode.py watch    # runs at login; follows the theme
-    calm-mode.py light | dark | toggle
+    calm-mode.py watch    # runs at login; follows the two themes
+    calm-mode.py light | dark | mixed | toggle
 """
 import sys
 
 from gi.repository import Gio, GLib
 
 PICS = "file:///home/shakil/Pictures/calm/"
-MODES = {
-    "dark": {"theme": "calm-ink", "icons": "calm-mono-dark", "scheme": "prefer-dark",
-             "wallpaper": PICS + "kijani-night.jpeg"},
-    "light": {"theme": "calm-paper", "icons": "calm-mono-light", "scheme": "prefer-light",
-              "wallpaper": PICS + "kijani-3x2.png"},
+INK, PAPER = "calm-ink", "calm-paper"
+APPS = {  # theme → what follows it
+    INK: {"icons": "calm-mono-dark", "scheme": "prefer-dark", "wallpaper": PICS + "kijani-night.jpeg"},
+    PAPER: {"icons": "calm-mono-light", "scheme": "prefer-light", "wallpaper": PICS + "kijani-3x2.png"},
 }
-THEME_TO_MODE = {m["theme"]: name for name, m in MODES.items()}
+MODES = {"dark": (INK, INK), "light": (PAPER, PAPER), "mixed": (PAPER, INK)}  # (apps, desktop)
 
 iface = Gio.Settings.new("org.cinnamon.desktop.interface")
 gnome = Gio.Settings.new("org.gnome.desktop.interface")
@@ -35,34 +37,43 @@ def put(settings, key, value):
         settings.set_string(key, value)
 
 
-def apply(mode):
-    m = MODES[mode]
+def apps(theme):
+    if theme not in APPS:
+        return
+    a = APPS[theme]
     for s in (iface, gnome):
-        put(s, "gtk-theme", m["theme"])
-        put(s, "icon-theme", m["icons"])
-    put(shell, "name", m["theme"])
-    put(portal, "color-scheme", m["scheme"])
-    put(background, "picture-uri", m["wallpaper"])
+        put(s, "gtk-theme", theme)
+        put(s, "icon-theme", a["icons"])
+    put(portal, "color-scheme", a["scheme"])
+    put(background, "picture-uri", a["wallpaper"])
     put(background, "picture-options", "zoom")
+
+
+def desktop(theme):
+    if theme not in APPS:
+        return
+    put(shell, "name", theme)
     if dock:
-        put(dock, "theme", m["theme"])  # the dock themes share the names calm-ink / calm-paper
+        put(dock, "theme", theme)  # the dock themes share the names calm-ink / calm-paper
 
 
-def follow(settings, key):
-    mode = THEME_TO_MODE.get(settings.get_string(key))
-    if mode:
-        apply(mode)
+def apply(mode):
+    a, d = MODES[mode]
+    apps(a)
+    desktop(d)
 
 
 def current():
-    return THEME_TO_MODE.get(iface.get_string("gtk-theme"), "dark")
+    pair = (iface.get_string("gtk-theme"), shell.get_string("name"))
+    return next((m for m, p in MODES.items() if p == pair), "dark")
 
 
 cmd = sys.argv[1] if len(sys.argv) > 1 else "watch"
 if cmd == "watch":
-    apply(current())
-    iface.connect("changed::gtk-theme", follow)
-    shell.connect("changed::name", follow)
+    apps(iface.get_string("gtk-theme"))
+    desktop(shell.get_string("name"))
+    iface.connect("changed::gtk-theme", lambda s, k: apps(s.get_string(k)))
+    shell.connect("changed::name", lambda s, k: desktop(s.get_string(k)))
     GLib.MainLoop().run()
 elif cmd in MODES:
     apply(cmd)

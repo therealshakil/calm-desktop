@@ -1,0 +1,6 @@
+{
+    "uuid": "calm-mode@calm-desktop",
+    "name": "Calm mode",
+    "description": "Light, mixed, or dark, from the top bar.",
+    "max-instances": 1
+}
