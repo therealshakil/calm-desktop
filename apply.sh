@@ -92,6 +92,10 @@ xdg-settings set default-web-browser firefox.desktop
 mkdir -p /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome
 ln -sf /home/shakil/Projects/calm-firefox/user.js /home/shakil/.mozilla/firefox/snmwf616.default-release/user.js
 ln -sf /home/shakil/Projects/calm-firefox/chrome/userChrome.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userChrome.css
-ln -sf /home/shakil/Projects/calm-firefox/chrome/userContent.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userContent.css
-# Site sheets that userContent.css imports; a missing one is skipped.
+# Content sheets: Firefox only follows @import inside the profile's chrome folder (not through a symlinked
+# userContent.css, not by absolute path), so each sheet is linked in and a real userContent.css imports them.
+# A missing sheet is skipped.
+ln -sf /home/shakil/Projects/calm-firefox/chrome/userContent.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/calm-firefox-content.css
 ln -sf /home/shakil/Projects/calm-hackernews/calm-hackernews.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/calm-hackernews.css
+rm -f /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userContent.css
+printf '%s\n' "/* Written by calm-desktop's apply.sh. Firefox only follows imports inside this folder, so each sheet is a link here. */" '@import url("calm-firefox-content.css");' '@import url("calm-hackernews.css");' > /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userContent.css
