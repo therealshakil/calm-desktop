@@ -95,6 +95,11 @@ ln -sf /home/shakil/Projects/calm-firefox/chrome/userChrome.css /home/shakil/.mo
 # Content sheets: Firefox only follows @import inside the profile's chrome folder (not through a symlinked
 # userContent.css, not by absolute path), so each sheet is linked in and a real userContent.css imports them.
 # A missing sheet is skipped.
+if [ -d /home/shakil/Projects/calm-hackernews/.git ]; then
+  git -C /home/shakil/Projects/calm-hackernews pull --ff-only
+else
+  git clone https://github.com/therealshakil/calm-hackernews.git /home/shakil/Projects/calm-hackernews
+fi
 ln -sf /home/shakil/Projects/calm-firefox/chrome/userContent.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/calm-firefox-content.css
 ln -sf /home/shakil/Projects/calm-hackernews/calm-hackernews.css /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/calm-hackernews.css
 rm -f /home/shakil/.mozilla/firefox/snmwf616.default-release/chrome/userContent.css
