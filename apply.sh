@@ -52,6 +52,9 @@ gsettings set org.cinnamon.desktop.screensaver font-date 'Atkinson Hyperlegible 
 gsettings set org.cinnamon.desktop.screensaver font-message 'Atkinson Hyperlegible 12'
 gsettings set org.cinnamon.desktop.screensaver date-format '%A %-e %B'
 
+# 5d. Login screen: slick-greeter can't read /home, so it needs the calm pieces copied out once.
+# Run with sudo, and again after rebuilding the themes: sudo sh /home/shakil/Projects/calm-desktop/login-screen.sh
+
 # 6. Files: Nemo in list view, with less chrome.
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'
 gsettings set org.nemo.window-state start-with-menu-bar false
