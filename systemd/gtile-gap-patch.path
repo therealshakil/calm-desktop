@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch gTile for updates that remove the gap patch
+
+[Path]
+PathChanged=/home/shakil/.local/share/cinnamon/extensions/gTile@shuairan/5.4/gTile.js
+PathChanged=/home/shakil/.local/share/cinnamon/extensions/gTile@shuairan
+Unit=gtile-gap-patch.service
+
+[Install]
+WantedBy=default.target

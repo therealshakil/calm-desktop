@@ -1,0 +1,9 @@
+[Unit]
+Description=Re-apply the even-gap patch to gTile if it's missing
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /home/shakil/Projects/calm-desktop/gtile-gap-patch.py
+
+[Install]
+WantedBy=graphical-session.target

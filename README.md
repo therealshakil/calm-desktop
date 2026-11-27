@@ -15,6 +15,7 @@ Atkinson Hyperlegible across the interface.
 No animations, no badges, small quiet notification popups, nothing on the desktop but the Kijani wallpaper.
 Nemo with less chrome, and Firefox with AI blocked and calm-firefox's declutter.
 A macOS-like layout: a slim top bar and a centred Plank Reloaded dock, both in ink or paper.
+Windows tile into even thirds with gTile (Super+G, then 2), with an 8 px gap between them.
 
 The decision behind it: [`docs/specs/001-calm-desktop.md`](./docs/specs/001-calm-desktop.md).
 

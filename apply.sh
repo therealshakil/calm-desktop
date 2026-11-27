@@ -55,6 +55,15 @@ gsettings set org.cinnamon.desktop.screensaver date-format '%A %-e %B'
 # 5d. Login screen: slick-greeter can't read /home, so it needs the calm pieces copied out once.
 # Run with sudo, and again after rebuilding the themes: sudo sh /home/shakil/Projects/calm-desktop/login-screen.sh
 
+# 5e. Tiling: gTile, with an even-thirds layout and an 8 px gap kept in place across gTile updates.
+# Super+G opens the grid; 2 picks Thirds. Spec: docs/specs/002-tiling.md
+python3 -I /home/shakil/Projects/calm-desktop/tiling.py
+mkdir -p /home/shakil/.config/systemd/user
+ln -sf /home/shakil/Projects/calm-desktop/systemd/gtile-gap-patch.path /home/shakil/.config/systemd/user/gtile-gap-patch.path
+ln -sf /home/shakil/Projects/calm-desktop/systemd/gtile-gap-patch.service /home/shakil/.config/systemd/user/gtile-gap-patch.service
+systemctl --user daemon-reload
+systemctl --user enable --now gtile-gap-patch.path gtile-gap-patch.service
+
 # 6. Files: Nemo in list view, with less chrome.
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'
 gsettings set org.nemo.window-state start-with-menu-bar false
