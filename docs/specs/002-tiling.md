@@ -1,6 +1,6 @@
 # Spec 002 — Tiling in thirds
 
-**Status:** locked — Shakil confirmed on 2026-11-27 ("yes") · **Date:** 2026-11-27 · **Scope:** this laptop
+**Status:** locked — Shakil confirmed on 2026-11-27 ("yes"); amended the same day after the Constitution steward's report ("approved") · **Date:** 2026-11-27 · **Scope:** this laptop
 
 Put any window into a third, or two thirds, of the screen from the keyboard.
 Cinnamon snaps to halves and quarters on its own, but not to thirds.
@@ -25,8 +25,9 @@ Cinnamon writes gTile's settings back while it runs, so the script edits them wi
 
 gTile has no gap setting, so `gtile-gap-patch.py` adds one to its code.
 It does nothing if the gap is already there.
+After patching, it switches gTile off and on so the gap takes effect without a logout.
 A systemd user watcher (`systemd/gtile-gap-patch.path`) runs it whenever an update replaces gTile, and once at login.
-If an update reshapes gTile past patching, a quiet notification says so and tiling carries on without the gap.
+If an update reshapes gTile past patching, a quiet notification says so once for that version, and tiling carries on without the gap.
 
 ## Considered
 
@@ -36,7 +37,7 @@ If an update reshapes gTile past patching, a quiet notification says so and tili
 
 ## Constitution Check
 
-1. **Serves:** I (a key, a glance, done), IX (Cinnamon stays; one small extension).
-2. **Violates:** none. Two additions, chosen by Shakil: gTile (GPL, from Cinnamon's own Spices site) and xdotool (Ubuntu's archive) for the top-bar button. The gap patch is local and undoes by switching the watcher off.
+1. **Serves:** I (a key, a glance, done), IX (Cinnamon stays; no new desktop).
+2. **Violates:** none, though it isn't small. Two outside additions, chosen by Shakil: gTile (GPL, from Cinnamon's own Spices site, fetched unpinned with no checksum, as Cinnamon itself does) and xdotool (Ubuntu's archive). Four pieces of our own to keep: `tiling.py`, a ~90-line patcher that edits gTile's code, a systemd path and service pair, and the `calm-tile` applet. The gap patch is the largest moving part; it undoes by switching the watcher off.
 3. **Subtracts:** dragging and resizing windows by hand.
 4. **Calm:** no motion, gTile's animation off; a failed patch is a quiet note, never an alarm.

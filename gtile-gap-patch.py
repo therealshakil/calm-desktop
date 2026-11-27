@@ -5,6 +5,7 @@ Safe to run any time: it does nothing if every gTile.js is already patched.
 Run by systemd/gtile-gap-patch.path (on any change to gTile) and .service (at login).
 """
 import glob
+import os
 import shutil
 import subprocess
 import time
@@ -38,12 +39,23 @@ def notify(msg):
     subprocess.run(["notify-send", "-i", "preferences-desktop", "gTile gap", msg], check=False)
 
 
+def notify_once(path, msg):
+    # Say it once per gTile version, never again at each login.
+    seen = os.path.expanduser("~/.cache/gtile-gap-patch-notified")
+    stamp = f"{path} {os.path.getmtime(path)}"
+    if os.path.exists(seen) and open(seen).read() == stamp:
+        return
+    notify(msg)
+    with open(seen, "w") as f:
+        f.write(stamp)
+
+
 def patch_file(path):
     src = open(path).read()
     if MARKER in src:
         return False
     if ANCHOR not in src:
-        notify("gTile changed shape after an update, so the gap couldn't be added this time. Tiling still works.")
+        notify_once(path, "gTile changed shape after an update, so the gap couldn't be added this time. Tiling still works.")
         return False
     shutil.copyfile(path, path + ".orig")
     with open(path, "w") as f:
