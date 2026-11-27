@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""calm-desktop: put the light / mixed / dark switch on the top bar.
+"""calm-desktop: put a calm applet on the top bar.
 
-Links applet/calm-mode@calm-desktop into Cinnamon and adds it at the start of the bar's right side.
+Links applet/<uuid> into Cinnamon and adds it at the start of the bar's right side.
+With no argument it's the light / mixed / dark switch, calm-mode@calm-desktop.
 Safe to run again. To remove: right-click it on the bar, then "Remove".
 """
+import sys
 from pathlib import Path
 
 from gi.repository import Gio
 
-UUID = "calm-mode@calm-desktop"
+UUID = sys.argv[1] if len(sys.argv) > 1 else "calm-mode@calm-desktop"
 SRC = Path(__file__).resolve().parent / "applet" / UUID
 DEST = Path.home() / ".local/share/cinnamon/applets" / UUID
 

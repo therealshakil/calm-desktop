@@ -63,6 +63,8 @@ ln -sf /home/shakil/Projects/calm-desktop/systemd/gtile-gap-patch.path /home/sha
 ln -sf /home/shakil/Projects/calm-desktop/systemd/gtile-gap-patch.service /home/shakil/.config/systemd/user/gtile-gap-patch.service
 systemctl --user daemon-reload
 systemctl --user enable --now gtile-gap-patch.path gtile-gap-patch.service
+# A grid button on the top bar does the same as Super+G. Needs xdotool once: pkexec apt install -y xdotool
+python3 -I /home/shakil/Projects/calm-desktop/calm-applet.py calm-tile@calm-desktop
 
 # 6. Files: Nemo in list view, with less chrome.
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'

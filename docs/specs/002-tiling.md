@@ -11,6 +11,7 @@ Cinnamon snaps to halves and quarters on its own, but not to thirds.
 | --- | --- |
 | Tool | gTile (`gTile@shuairan`), a Cinnamon extension from Cinnamon Spices |
 | Shortcut | Super+G opens the grid; Escape closes it |
+| Button | a grid icon on the top bar (`calm-tile@calm-desktop`) does the same as Super+G, through `xdotool` (apt) |
 | Layout | layout 2 is "Thirds": three even columns, one row |
 | Keys in the grid | arrows move, Shift+arrow widens to two thirds, Enter places |
 | Gap | 8 px, even between windows and at the screen edges; none when maximised |
@@ -33,14 +34,9 @@ If an update reshapes gTile past patching, a quiet notification says so and tili
 - A tiling window manager (i3 and the like): powerful, but it changes how every window behaves.
 - A script per third on its own key: fewer keys to learn, but a fresh tool to keep.
 
-## Open
-
-- A panel button for Super+G would need `xdotool` (apt).
-  Left out for now.
-
 ## Constitution Check
 
 1. **Serves:** I (a key, a glance, done), IX (Cinnamon stays; one small extension).
-2. **Violates:** none. One addition: gTile, GPL, from Cinnamon's own Spices site, chosen by Shakil. The gap patch is local and undoes by switching the watcher off.
+2. **Violates:** none. Two additions, chosen by Shakil: gTile (GPL, from Cinnamon's own Spices site) and xdotool (Ubuntu's archive) for the top-bar button. The gap patch is local and undoes by switching the watcher off.
 3. **Subtracts:** dragging and resizing windows by hand.
 4. **Calm:** no motion, gTile's animation off; a failed patch is a quiet note, never an alarm.

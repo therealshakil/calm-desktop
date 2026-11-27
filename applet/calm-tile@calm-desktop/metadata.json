@@ -1,0 +1,6 @@
+{
+    "uuid": "calm-tile@calm-desktop",
+    "name": "Calm tile",
+    "description": "Opens gTile's grid for the window you're in, from the top bar.",
+    "max-instances": 1
+}
