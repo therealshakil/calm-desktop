@@ -1,6 +1,6 @@
 # Spec 002 — Tiling in thirds
 
-**Status:** draft proposal — waiting for Shakil to lock · **Date:** 2026-11-27 · **Scope:** this laptop
+**Status:** locked — Shakil confirmed on 2026-11-27 ("yes") · **Date:** 2026-11-27 · **Scope:** this laptop
 
 Put any window into a third, or two thirds, of the screen from the keyboard.
 Cinnamon snaps to halves and quarters on its own, but not to thirds.
