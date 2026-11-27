@@ -43,6 +43,15 @@ python3 -I /home/shakil/Projects/calm-desktop/quiet-applets.py
 # Needs Plank Reloaded installed once: sudo sh /home/shakil/Projects/calm-desktop/install-plank.sh
 python3 -I /home/shakil/Projects/calm-desktop/calm-dock.py
 
+# 5c. Lock screen: the clock stays still, in calm's face; no notification count, no album art.
+gsettings set org.cinnamon.desktop.screensaver floating-widgets false
+gsettings set org.cinnamon.desktop.screensaver show-info-panel false
+gsettings set org.cinnamon.desktop.screensaver show-album-art false
+gsettings set org.cinnamon.desktop.screensaver font-time 'Atkinson Hyperlegible 56'
+gsettings set org.cinnamon.desktop.screensaver font-date 'Atkinson Hyperlegible 18'
+gsettings set org.cinnamon.desktop.screensaver font-message 'Atkinson Hyperlegible 12'
+gsettings set org.cinnamon.desktop.screensaver date-format '%A %-e %B'
+
 # 6. Files: Nemo in list view, with less chrome.
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'
 gsettings set org.nemo.window-state start-with-menu-bar false
